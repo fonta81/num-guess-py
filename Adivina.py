@@ -7,25 +7,30 @@ class Game:
 
     def Juego(self):
         while True:
-            numero = self.Pedirnumero()
-            diferencia = abs(numero - self.numeroRandom)
+            try:
+                numero = self.Pedirnumero()
+                diferencia = abs(numero - self.numeroRandom)
 
-            if numero == self.numeroRandom:
-                print("!!Correcto!!")
-                return
-            elif numero > 20 or numero < 1:
-                print("Ingresa un valor dentro de los parametros")
+                if numero == self.numeroRandom:
+                    print("!!Correcto!!")
+                    return
+                elif numero > 20 or numero < 1:
+                    print("Ingresa un valor dentro de los parametros")
 
-            elif numero < self.numeroRandom:
-                if diferencia <= 5:
-                    print("Muy cerca, solo un poco mas alto")
-                else:
-                    print("Un numero un poco mas alto")
-            elif numero > self.numeroRandom:
-                if diferencia <= 5:
-                    print("Muy cerca, solo un poco mas bajo")
-                else:
-                    print("Un numero un poco mas bajo")
+                elif numero < self.numeroRandom:
+                    if diferencia <= 5:
+                        print("Muy cerca, solo un poco mas alto")
+                    else:
+                        print("Un numero un poco mas alto")
+                elif numero > self.numeroRandom:
+                    if diferencia <= 5:
+                        print("Muy cerca, solo un poco mas bajo")
+                    else:
+                        print("Un numero un poco mas bajo")
+            except ValueError:
+                print("Ingresa un valor entero, o valido")
+            except Exception as e:
+                print(f"Ingrese un valor valido\nError: {e}")
 
     def Pedirnumero(self):
         valor = int(input("Dame un numero del 1-20: "))
