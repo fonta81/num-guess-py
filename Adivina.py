@@ -13,6 +13,9 @@ class Game:
             if numero == self.numeroRandom:
                 print("!!Correcto!!")
                 return
+            elif numero > 20 or numero < 1:
+                print("Ingresa un valor dentro de los parametros")
+
             elif numero < self.numeroRandom:
                 if diferencia <= 5:
                     print("Muy cerca, solo un poco mas alto")
