@@ -5,8 +5,9 @@ class Game:
     def __init__(self):
         self.numeroRandom = random.randint(1, 10)
 
-    def Juego(self, numero):
+    def Juego(self):
         while True:
+            numero = self.Pedirnumero()
             diferencia = abs(numero - self.numeroRandom)
 
             if numero == self.numeroRandom:
@@ -28,7 +29,7 @@ class Game:
         return valor
 
     def Usuario(self):
-        self.Juego(self.Pedirnumero())
+        self.Juego()
 
 
 def main():  # El menu principal
@@ -36,7 +37,7 @@ def main():  # El menu principal
 
     while True:
         print("\n" + "=" * 60)
-        print("1. Iniciar")
+        print("1. Jugar")
         print("2. Salir")
         elige = input("Elige: ")
 
