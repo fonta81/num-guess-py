@@ -3,7 +3,7 @@ import random
 
 class Game:
     def __init__(self):
-        self.numeroRandom = random.randint(1, 10)
+        self.numeroRandom = random.randint(1, 20)
 
     def Juego(self):
         while True:
@@ -11,21 +11,21 @@ class Game:
             diferencia = abs(numero - self.numeroRandom)
 
             if numero == self.numeroRandom:
-                print("!!Correcto")
+                print("!!Correcto!!")
                 return
             elif numero < self.numeroRandom:
-                if diferencia <= 2:
+                if diferencia <= 5:
                     print("Muy cerca, solo un poco mas alto")
                 else:
                     print("Un numero un poco mas alto")
             elif numero > self.numeroRandom:
-                if diferencia <= 2:
+                if diferencia <= 5:
                     print("Muy cerca, solo un poco mas bajo")
                 else:
                     print("Un numero un poco mas bajo")
 
     def Pedirnumero(self):
-        valor = int(input("Dame un numero: "))
+        valor = int(input("Dame un numero del 1-20: "))
         return valor
 
     def Usuario(self):
